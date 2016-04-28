@@ -84,7 +84,8 @@ RNA-seq data when reference genomes are available.
   If you are not familiar with the R statistical programming language we
   strongly encourage you to work through an introductory R course before you
   attend this workshop. We recommend the Software Carpentry
-  <a href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a> lessons.
+  <a href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a>
+  lessons up to and including vectorisation (topic 9).
 </p>
 
 <!--
@@ -124,6 +125,11 @@ RNA-seq data when reference genomes are available.
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
   on. They should have a few specific software packages installed (listed
   <a href="#setup">below</a>).
+  If you choose to bring your own RNAseq data, it must be count data
+  (because we don't have the time or computational resources to map large data
+  sets during the workshop).
+  If you're not sure, here is an
+  <a href="http://www.bioconductor.org/help/workflows/rnaseqGene/#starting-from-count-matrices">example of count data format</a>.
 </p>
 
 <!--
@@ -442,24 +448,57 @@ not need to attend this session.
   </div>
   <h4>R packages</h4>
   <p>
-    You will also need to install the following R packages:
-    <strong>limma, edgeR, gplots, org.Mm.eg.db, EDASeq, RColorBrewer, Glimma</strong>.
+      You will also need to install the following R packages:
+      <strong>limma, edgeR, gplots, org.Mm.eg.db, EDASeq, RColorBrewer, Glimma, Rsubread</strong>.
   </p>
   <p>
-     These can all be obtained from <a href="https://www.bioconductor.org/">Bioconductor</a>.
+      The following packages are needed for the first day, so you should make sure they are installed in advance:
+      <strong>limma, edgeR, gplots, org.Mm.eg.db, EDASeq, RColorBrewer</strong>.
   </p>
   <p>
-  Open RStudio and run the following commands to install packages from Bioconductor:
+      These can all be obtained from <a href="https://www.bioconductor.org/">Bioconductor</a>.
   </p>
   <p>
-  <code>source("http://bioconductor.org/biocLite.R")</code>
+      Open RStudio and run the following commands to install packages from Bioconductor:
   </p>
   <p>
-  <code>biocLite("limma")</code>
+      <code>> source("http://bioconductor.org/biocLite.R")</code>
   </p>
   <p>
-  Repeat this for each package.
+      <code>> biocLite("limma")</code>
   </p>
+  <p>
+      Repeat this for each package.
+  </p>
+  <p>
+      <code>> biocLite("edgeR")</code>
+  </p>
+  <p>
+      <code>…</code>
+  </p>
+  <p>
+      <code>> biocLite("RColorBrewer")</code>
+  </p>
+
+  <p>
+      We will install Glimma from source
+      (Mac users: Glimma_0.99.5.tgz, Windows: Glimma_0.99.5.zip).
+      We can help with this during the workshop.
+  </p>
+  <p>
+      Day 2 packages:
+      <strong>Rsubread</strong>
+  </p>
+  <p>
+      Mac and Linux users can install Rsubread using
+  </p>
+  <p>
+      <code>> biocLite(“Rsubread”)</code>
+  </p>
+  <p>
+      Windows users will need to set up a GVL instance. Instructions to follow.
+  </p>
+
   <p>
   Common problems:
   <ul>
