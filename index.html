@@ -10,7 +10,7 @@ humandate: "May 11-12, 2016"    # human-readable date (e.g., "Feb 17-18, 2020")
 humantime: "9:00 am - 4:30 pm"    # human-readable time (e.g., "9:00 am - 4:30 pm")
 startdate: 2016-05-11      # use YYYY-MM-DD format like 2015-01-01
 enddate: 2016-05-12        # use YYYY-MM-DD format like 2015-01-02
-instructor: ["Belinda Phipson", "Maria Doyle", "Jovana Maksimovic", "Harriet Dashnow"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+instructor: ["Belinda Phipson", "Maria Doyle", "Jovana Maksimovic", "Harriet Dashnow", "Matt Ritchie"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Jane Hawkey", "Sepideh Foroutan", "Ramyar Molania", "Chenkai Ma", "Luke Zappia", "Katrina Bell", "Anthony Hawkins", "Enid Lam", "Yih-Chih Chan", "Matt Wakefield"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 contact: "combine@combine.org.au"      # contact email address for workshop organizer, such as "grace@hopper.org"
 etherpad:         # optional (insert the URL for your Etherpad if you're using one)
@@ -111,7 +111,7 @@ RNA-seq data when reference genomes are available.
     <img border="0" alt="VLSCI" src="https://combineau.files.wordpress.com/2015/05/logo_vlsci_rgb.jpg" height="50"> </a>
 </p>
 
-        
+
 <!--
   SPECIAL REQUIREMENTS
 
@@ -214,8 +214,7 @@ not need to attend this session.
   <div class="col-md-6">
     <h3>Day 2</h3>
     <table class="table table-striped">
-      <tr> <td>09:30</td>  <td>Alignment and feature counting theory</td> </tr>
-      <tr> <td>10:00</td>  <td>Alignment and feature counting</td> </tr>
+      <tr> <td>09:30</td>  <td>Alignment and feature counting</td> </tr>
       <tr> <td>11:00</td>  <td><i>Morning tea</i></td> </tr>
       <tr> <td>11:30</td>  <td>Gene set testing</td> </tr>
       <tr> <td>13:00</td>  <td><i>Lunch</i></td> </tr>
@@ -381,8 +380,15 @@ not need to attend this session.
   access to the software described below. In addition, you will
   need an up-to-date web browser.
 </p>
+
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
+    Even if you already have R installed, it is important that you have the
+    latest version 3.2.5 because some of the packages we will be using will not
+    work with earlier versions of R.
+</p>
+
+<p>
+  Software Carpentry maintains a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
   <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
@@ -435,10 +441,32 @@ not need to attend this session.
   <h4>R packages</h4>
   <p>
     You will also need to install the following R packages:
-    limma, edgeR, gplots, org.Mm.eg.db, Rsubread, EDASeq, RColorBrewer, Glimma
+    <strong>limma, edgeR, gplots, org.Mm.eg.db, EDASeq, RColorBrewer, Glimma</strong>.
   </p>
   <p>
-      These can all be obtained from Bioconductor. Please see the
-      <a href="https://www.bioconductor.org/install/">Instructions for installing Bioconductor packages</a>.
+     These can all be obtained from <a href="https://www.bioconductor.org/">Bioconductor</a>.
+  </p>
+  <p>
+  Open RStudio and run the following commands to install packages from Bioconductor:
+  </p>
+  <p>
+  <code>source("http://bioconductor.org/biocLite.R")</code>
+  </p>
+  <p>
+  <code>biocLite("limma")</code>
+  </p>
+  <p>
+  Repeat this for each package.
+  </p>
+  <p>
+  Common problems:
+  <ul>
+    <li>If the source command doesn't work, try https instead of http.</li>
+    <li>Make sure you are directly connected to the internet and not using a proxy.</li>
+    <li>Make sure the package name is in quotes.</li>
+  </ul>
+  If you have any trouble please see the
+  <a href="https://www.bioconductor.org/install/">Instructions for installing Bioconductor packages</a>.
+  You can also arrive early on the first day of the workshop for help with set up.
   </p>
 </div> <!-- End of 'R' section. -->
